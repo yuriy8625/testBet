@@ -1,6 +1,6 @@
 <?php
 
-namespace Interfaces;
+namespace App\Interfaces;
 
 interface MatchInterface {
     public function getResultMatch();

@@ -1,8 +1,8 @@
 <?php
 
-namespace Classes;
+namespace App\Classes;
 
-class Match
+class BaseMatch
 {
     const WINS_A = 1;
     const WINS_B = 2;
@@ -27,15 +27,15 @@ class Match
      */
     public function getResultMatch()
     {
-        if($this->command_a === $this->command_b){
+        if ($this->command_a === $this->command_b) {
             return self::DRAW;
         }
 
-        if($this->command_a > $this->command_b){
+        if ($this->command_a > $this->command_b) {
             return self::WINS_A;
         }
 
-        if($this->command_b > $this->command_a){
+        if ($this->command_b > $this->command_a) {
             return self::WINS_B;
         }
 

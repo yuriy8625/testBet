@@ -1,8 +1,7 @@
 <?php
 
 
-namespace Classes;
-
+namespace App\Classes;
 
 
 class Prise
@@ -24,8 +23,8 @@ class Prise
 
     /**
      * Prise constructor.
-     * @param CommandMatch $commandMatch
-     * @param UserMatch $userMatch
+     * @param  CommandMatch  $commandMatch
+     * @param  UserMatch  $userMatch
      */
     public function __construct(CommandMatch $commandMatch, UserMatch $userMatch)
     {
@@ -47,19 +46,19 @@ class Prise
     {
         $sum = $this->userMatch->sum === $this->commandMatch->sum;
         $result = $this->commandMatch->type === $this->userMatch->type;
-        if($result && $sum){
+        if ($result && $sum) {
             $this->type = self::MAX;
         }
 
-        if($result && !$sum){
+        if ($result && !$sum) {
             $this->type = self::MEDIUM;
         }
 
-        if(!$result){
+        if (!$result) {
             $this->type = self::LOSE;
         }
 
-        $this->message = 'Вы выиграли - ' . $this->prices[$this->type];
+        $this->message = 'Вы выиграли - '.$this->prices[$this->type];
     }
 
 

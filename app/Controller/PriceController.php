@@ -1,13 +1,10 @@
 <?php
 
-namespace Controller;
-include_once ('Classes/CommandMatch.php');
-include_once ('Classes/UserMatch.php');
-include_once ('Classes/Prise.php');
-include_once ('Controller/Controller.php');
-use Classes\CommandMatch;
-use Classes\Prise;
-use Classes\UserMatch;
+namespace App\Controller;
+
+use App\Classes\CommandMatch;
+use App\Classes\Prise;
+use App\Classes\UserMatch;
 
 class PriceController
 {
@@ -16,7 +13,7 @@ class PriceController
      */
     public function getEventResult()
     {
-        if(!$this->valiidate()){
+        if (!$this->valiidate()) {
             return [
                 'type' => 'error',
                 'message' => 'Ошибка данных',
@@ -24,7 +21,7 @@ class PriceController
         }
 
         $command_match = new CommandMatch();
-        $user_match = new UserMatch((int) $_POST['command_a'], (int) $_POST['command_b']);
+        $user_match = new UserMatch((int)$_POST['command_a'], (int)$_POST['command_b']);
 
         $prise = new Prise($command_match, $user_match);
 
@@ -40,7 +37,7 @@ class PriceController
     {
         $a = $_POST['command_a'];
         $b = $_POST['command_b'];
-        if($a === NULL || $b === NULL){
+        if ($a === null || $b === null) {
             return false;
         }
 

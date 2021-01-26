@@ -1,9 +1,8 @@
 <?php
 
-namespace Classes;
-require_once ('Classes/Match.php');
+namespace App\Classes;
 
-class CommandMatch extends Match
+class CommandMatch extends BaseMatch
 {
     /**
      * CommandMatch constructor.

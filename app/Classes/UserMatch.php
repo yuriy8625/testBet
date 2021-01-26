@@ -1,14 +1,13 @@
 <?php
 
-namespace Classes;
-require_once ('Classes/Match.php');
+namespace App\Classes;
 
-class UserMatch extends Match
+class UserMatch extends BaseMatch
 {
     /**
      * UserMatch constructor.
-     * @param int $command_a
-     * @param int $command_b
+     * @param  int  $command_a
+     * @param  int  $command_b
      */
     public function __construct(int $command_a, int $command_b)
     {

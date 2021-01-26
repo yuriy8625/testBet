@@ -1,0 +1,17 @@
+{
+    "name": "kernytskyi/test-bet",
+    "authors": [
+        {
+            "name": "ykernytskyi",
+            "email": "ykernytskyi@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    }
+}
+
+

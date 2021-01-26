@@ -1,8 +1,9 @@
 <?php
 
-use Controller\PriceController;
+ini_set('display_errors', 1);
+require_once __DIR__.'/vendor/autoload.php';
 
-include_once ('Controller/PriceController.php');
+use App\Controller\PriceController;
 
 $prise = new PriceController();
 $res = $prise->getEventResult()
@@ -38,25 +39,25 @@ $res = $prise->getEventResult()
             </h3>
         </div>
 
-       <?php
+        <?php
 
-       if($res['status'] === 'error'){
-           echo ' <div class="card-body text-white bg-danger ">
+        if (isset($res['status']) && $res['status'] === 'error') {
+            echo ' <div class="card-body text-white bg-danger ">
                     <h3>Ошибка</h3>
                 </div>';
-       }else{
-           echo '<div class="card-body text-white bg-secondary ">
-                    <h3>' . $res['prise'] . '</h3>
+        } else {
+            echo '<div class="card-body text-white bg-secondary ">
+                    <h3>'.$res['prise'].'</h3>
                 </div>
                 <div class="card-body text-white bg-secondary ">
-                    <p>Результат события: ' . $res['command_info']['command_a'] . ' : ' . $res['command_info']['command_b'] . '</p>
-                     <p>Прогноз события: ' . $res['user_info']['command_a'] . ' : ' . $res['user_info']['command_b'] . '</p>
+                    <p>Результат события: '.$res['command_info']['command_a'].' : '.$res['command_info']['command_b'].'</p>
+                     <p>Прогноз события: '.$res['user_info']['command_a'].' : '.$res['user_info']['command_b'].'</p>
                 </div>';
-       }
-       ?>
+        }
+        ?>
 
         <div class="mt-5">
-            <a href="/index.php" class="btn btn-primary btn-lg btn-block" >Попробовать еще</a>
+            <a href="/index.php" class="btn btn-primary btn-lg btn-block">Попробовать еще</a>
         </div>
 
 
